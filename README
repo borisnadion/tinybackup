@@ -1,8 +1,8 @@
 Tinybackup
 ==========
 
-Allows you to download backup of current database, just open direct your browser to
-http://yoursite.com/tinybackups/new
+Allows downloading backup of current database from browser.
+Just direct your browser to http://yoursite.com/tinybackups/new select tables to exclude and download gzip or bzip2 backup.
 
 Install
 =======
