@@ -1,0 +1,27 @@
+Tinybackup
+==========
+
+Allows you to download backup of current database, just open direct your browser to
+http://yoursite.com/tinybackups/new
+
+Install
+=======
+
+1. install plugin
+2. add config/initializers/backup.rb
+
+TinybackupsController.class_eval do
+  protected
+  include AuthenticatedSystem
+  include RolesRequirements  
+  
+  before_filter :login_required
+  before_filter :require_admin
+end
+# or whatever it takes to authenticate user
+
+
+3. add to config/routes.rb
+map.resources :tinybackups
+
+Copyright (c) 2009 Astrails Ltd, released under the MIT license

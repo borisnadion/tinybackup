@@ -1,0 +1,17 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <title>Tinybackups</title>
+  </head>
+  <body>
+		<h2>Backup for &quot;<%= h @db_name %>&quot;</h2>
+		<% form_tag :action => "create" do %>
+			<p>
+				Tables to exclude from backup (<em>leave blank to include all tables</em>):
+				<br/><%= text_area_tag :exclude_tables, @exclude_tables, :rows => 5, :cols => 50 %>
+			</p>
+			<p>Compress: <%= select_tag :compress, options_for_select(["gzip", "bzip2"]) %></p>
+			<%= submit_tag "Download!" %>
+		<% end %>
+  </body>
+</html>
