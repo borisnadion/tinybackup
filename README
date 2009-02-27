@@ -7,18 +7,15 @@ Just direct your browser to http://yoursite.com/tinybackups/new select tables to
 Install
 =======
 
-1. install plugin
+1. ./script/plugin install git://github.com/borisnadion/tinybackup.git
 2. add config/initializers/backup.rb
 
 TinybackupsController.class_eval do
-  protected
+protected
+	# or whatever it takes to authenticate user
   include AuthenticatedSystem
-  include RolesRequirements  
-  
-  before_filter :login_required
-  before_filter :require_admin
+  before_filter :admin_required
 end
-# or whatever it takes to authenticate user
 
 
 3. add to config/routes.rb
